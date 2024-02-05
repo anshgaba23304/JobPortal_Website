@@ -21,14 +21,15 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
+            
         }
 
         .box {
-            max-width: 600px;
+            max-width: 100%; /* Adjusted max-width for responsiveness */
             padding: 20px;
             background: white;
             margin: 0 auto;
-            margin-top: 50px;
+            margin-top: 20px;
             box-shadow: 4px 3px 5px #2d2d2d;
             border-radius: 10px;
         }
@@ -74,7 +75,7 @@
         }
 
         button {
-            background-color: blue;
+            background-color: #ffd700;
             border: transparent solid 5px;
             padding: 5px 10px;
             color: white;
@@ -83,8 +84,8 @@
         }
 
         button:hover {
-            background: #2d2d2d;
-            border: 4px solid blue;
+            
+            border-style:double;
             color: black;
             transition: 0.3s ease-out;
             cursor: pointer;
@@ -92,7 +93,7 @@
         }
 
         .textarea_control {
-            grid-column: 1 / span 2;
+            grid-column: span 2; /* Adjusted grid-column for responsiveness */
         }
 
         .textarea_control textarea {
@@ -101,7 +102,7 @@
 
         @media(max-width: 460px) {
             .textarea_control {
-                grid-column: 1 / span 1;
+                grid-column: span 1; /* Adjusted grid-column for responsiveness */
             }
         }
     </style>
@@ -172,64 +173,31 @@
     </div>
 
     <script>
-        // function saveFormData() {
-        //     var firstName = document.getElementById('first_name').value;
-        //     var lastName = document.getElementById('last_name').value;
-        //     var email = document.getElementById('email').value;
-        //     var jobRole = document.getElementById('job_role').value;
-        //     var address = document.getElementById('address').value;
-        //     var city = document.getElementById('city').value;
-        //     var pincode = document.getElementById('pincode').value;
-        //     var date = document.getElementById('date').value;
-        //     var upload = document.getElementById('upload').value;
-
-        //     var formData = {
-        //         'First Name': firstName,
-        //         'Last Name': lastName,
-        //         'Email': email,
-        //         'Job Role': jobRole,
-        //         'Address': address,
-        //         'City': city,
-        //         'Pincode': pincode,
-        //         'Date': date,
-        //         'Upload': upload
-        //     };
-
-        //     localStorage.setItem('jobApplicationData', JSON.stringify(formData));
-
-        //     alert('Form data saved to local storage!');
-        // }
         function saveFormData() {
-    var firstName = document.getElementById('first_name').value;
-    var lastName = document.getElementById('last_name').value;
-    var email = document.getElementById('email').value;
-    var jobRole = document.getElementById('job_role').value;
-    var address = document.getElementById('address').value;
-    var city = document.getElementById('city').value;
-    var pincode = document.getElementById('pincode').value;
-    var date = document.getElementById('date').value;
-    // Skip the file input for now
-    // var upload = document.getElementById('upload').value;
+            var firstName = document.getElementById('first_name').value;
+            var lastName = document.getElementById('last_name').value;
+            var email = document.getElementById('email').value;
+            var jobRole = document.getElementById('job_role').value;
+            var address = document.getElementById('address').value;
+            var city = document.getElementById('city').value;
+            var pincode = document.getElementById('pincode').value;
+            var date = document.getElementById('date').value;
 
-    var formData = {
-        'First Name': firstName,
-        'Last Name': lastName,
-        'Email': email,
-        'Job Role': jobRole,
-        'Address': address,
-        'City': city,
-        'Pincode': pincode,
-        'Date': date,
-        // Skip the file input for now
-        // 'Upload': upload
-    };
+            var formData = {
+                'First Name': firstName,
+                'Last Name': lastName,
+                'Email': email,
+                'Job Role': jobRole,
+                'Address': address,
+                'City': city,
+                'Pincode': pincode,
+                'Date': date,
+            };
 
-    console.log(formData);  // Log the form data to the console for debugging
+            console.log(formData);  // Log the form data to the console for debugging
 
-    // localStorage.setItem('jobApplicationData', JSON.stringify(formData));
-    alert('Form data saved to local storage!');
-}
-
+            alert('Form data saved to local storage!');
+        }
     </script>
 </body>
 
