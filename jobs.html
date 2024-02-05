@@ -2,410 +2,375 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Portal</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon2.png">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-    }
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>Job Portal</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon2.png">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
 
-    header {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
+        /* Navbar styles */
+        .navbar {
+            overflow: hidden;
+            background-color: #2d2d2d;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    section {
-      margin: 20px;
-    }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 12px;
+            text-decoration: none;
+            font-size: 16px;
+        }
 
-    .job-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
+        .navbar img {
+            height: 30px;
+            margin-right: 10px;
+        }
 
-    .job-card {
-      width: 300px;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 10px;
-      padding: 15px;
-    }
+        .navbar .search {
+            display: flex;
+            align-items: center;
+        }
 
-    h2 {
-      color: #333;
-    }
+        .navbar .search input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
 
-    p {
-      color: #666;
-    }
+        .navbar .user-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+        }
 
-    .event-card {
-      width: 300px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 10px;
-      padding: 15px;
+        .user-menu a:hover {
+            background-color: white;
+            color: #222;
+        }
 
-    }
+        .navbar a:hover {
+            background-color: #ffd700;
+            color: #222;
+            border-radius: 5px;
+        }
 
-    /* footer */
-    footer {
-      background-color: #2d2d2d;
-      color: #fff;
-      padding: 20px 0;
-    }
+        .navbar .icon {
+            display: none;
+        }
 
-    .footer-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
+        /* Media queries for smaller screens */
+        @media screen and (max-width: 600px) {
+            .navbar a:not(:first-child) {
+                display: none;
+            }
 
-    .footer-section {
-      width: 25%;
-      margin-bottom: 20px;
-    }
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
 
-    .footer-section h3 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
+            .navbar .search,
+            .navbar .user-menu {
+                display: none;
+            }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
+            .navbar.responsive {
+                flex-direction: column;
+                text-align: center;
+            }
 
-    ul li {
-      margin-bottom: 8px;
-    }
+            .navbar.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
 
-    .footer-section a {
-      color: #fff;
-      text-decoration: none;
-    }
+            .navbar.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
 
-    a:hover {
-      text-decoration: underline;
-    }
+            .navbar.responsive .search,
+            .navbar.responsive .user-menu {
+                display: flex;
+                flex-direction: column;
+            }
+        }
 
-    /* Copyright Bar Styles */
-    .copyright-bar {
-      background-color: #222;
-      text-align: center;
-      padding: 10px 0;
-    }
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
 
-    .copyright-bar p {
-      margin: 0;
-      font-size: 0.8em;
-    }
+        /* Section styles */
+        section {
+            margin: 20px;
+        }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .footer-section {
-        width: 100%;
-        margin-right: 0;
-      }
-    }
+        /* Job container styles */
+        .job-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
-    /* Navbar */
-    .navbar {
-      overflow: hidden;
-      background-color: #2d2d2d;
-      padding: 8px 16px;
-      /* Adjust the padding for height reduction */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .job-card {
+            width: 300px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+        }
 
-    .navbar a {
-      float: left;
-      display: block;
-      color: #ffffff;
-      text-align: center;
-      padding: 8px 12px;
+        h2 {
+            color: #333;
+        }
 
-      text-decoration: none;
-      font-size: 16px;
+        p {
+            color: #666;
+        }
 
-    }
+        .event-card {
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+        }
 
-    .navbar img {
-      height: 30px;
+        /* Copyright Bar Styles */
+        .copyright-bar {
+            background-color: #222;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-      margin-right: 10px;
-
-    }
-
-    .navbar .search {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar .search input {
-      padding: 8px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .navbar .user-menu a {
-      color: #ffffff;
-      text-decoration: none;
-      margin-left: 15px;
-    }
-    .user-menu a:hover
-    {
-      background-color:white;
-      color: #222;
-    }
-    .navbar a:hover
-    {
-      background-color:#ffd700;
-      color: #222;
-      border-radius: 5px;
-      
-    }
-    .navbar .icon {
-      display: none;
-    }
-
-    @media screen and (max-width: 600px) {
-      .navbar a:not(:first-child) {
-        display: none;
-      }
-
-      .navbar a.icon {
-        float: right;
-        display: block;
-      }
-
-      .navbar .search,
-      .navbar .user-menu {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .navbar.responsive {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .navbar.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-
-      .navbar.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-
-      .navbar.responsive .search,
-      .navbar.responsive .user-menu {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  </style>
+        .copyright-bar p {
+            margin: 0;
+            font-size: 0.8em;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="navbar" id="myNavbar">
-    <a href="homepage.html">
-      <img src="2.png" alt="JobPortal Logo">
-    </a>
-    <a href="homepage.html" class="active">Home</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="service.html">Services</a>
-    <a href="contact.html">Contact</a>
-    <div class="search">
-      <input type="text" placeholder="Search jobs">
+    <!-- Navbar -->
+    <div class="navbar" id="myNavbar">
+        <a href="homepage.html">
+            <img src="2.png" alt="JobPortal Logo">
+        </a>
+        <a href="index.html" class="active">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <div class="search">
+            <input type="text" placeholder="Search jobs">
+        </div>
+        <div class="user-menu">
+            <a href="login.html" class="login">Login/Sign-up</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">&#9776;</a>
     </div>
-    <div class="user-menu">
-      <a href="login.html" class="login">Login/Sign-up</a>
+
+    <!-- Main content -->
+    <h1 align="center">Find your dream job now</h1>
+    <hr>
+
+    <!-- Top Companies Hiring -->
+    <h2 align="center">Top Companies Hiring</h2>
+    <div class="company-container">
+        <!-- Add your existing company container content here -->
+        <div class="company">
+            <img class="hiring" src="google2.png" alt="">
+            <p>Rating: 4.5/5</p>
+            <p>Jobs Available: 500</p>
+            <a href="apply.html">Apply now</a>
+          </div>
       
-    </div>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">&#9776;</a>
-  </div>
-  <h1 align="center">Find your dream job now</h1>
-  <hr>
-  <h2 align="center">Top Companies Hiring</h2>
-  <div class="company-container">
-    <div class="company">
-      <img class="hiring" src="google2.png" alt="">
-      <p>Rating: 4.5/5</p>
-      <p>Jobs Available: 500</p>
-      <a href="apply.html">Apply now</a>
-    </div>
+          <div class="company">
+            <img class="hiring" src="microsoft-2.webp" alt="">
+            <p>Rating: 4.8/5</p>
+            <p>Jobs Available: 700</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+      
+          <div class="company">
+      
+            <img class="hiring" src="amazon.png" alt="">
+            <p>Rating: 4.2/5</p>
+            <p>Jobs Available: 400</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+        </div>
+      
+        <div class="company-container">
+          <div class="company">
+            <img class="hiring" src="infosys.jpg" alt="">
+            <p>Rating: 4.0/5</p>
+            <p>Jobs Available: 200</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+      
+          <div class="company">
+            <img class="hiring" src="cisco.png" alt="">
+            <p>Rating: 4.6/5</p>
+            <p>Jobs Available: 300</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+      
+          <div class="company">
+            <img class="hiring" src="Wipro.jpg" alt="">
+            <p>Rating: 3.9/5</p>
+            <p>Jobs Available: 600</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+    </div><hr><br>
 
-    <div class="company">
-      <img class="hiring" src="microsoft-2.webp" alt="">
-      <p>Rating: 4.8/5</p>
-      <p>Jobs Available: 700</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-
-    <div class="company">
-
-      <img class="hiring" src="amazon.png" alt="">
-      <p>Rating: 4.2/5</p>
-      <p>Jobs Available: 400</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-  </div>
-
-  <div class="company-container">
-    <div class="company">
-      <img class="hiring" src="infosys.jpg" alt="">
-      <p>Rating: 4.0/5</p>
-      <p>Jobs Available: 200</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-
-    <div class="company">
-      <img class="hiring" src="cisco.png" alt="">
-      <p>Rating: 4.6/5</p>
-      <p>Jobs Available: 300</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-
-    <div class="company">
-      <img class="hiring" src="Wipro.jpg" alt="">
-      <p>Rating: 3.9/5</p>
-      <p>Jobs Available: 600</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-  </div>
-
-  <hr>
-  <h2 align="center">Featured companies actively hiring</h2>
-  <div class="company-container">
-    <div class="company">
-      <img class="hiring" src="reliance.png" alt="">
-      <p>Rating: 4.5/5</p>
-      <p>Jobs Available: 500</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-
-    <div class="company">
-      <img class="hiring" src="belden2.png" alt="">
-      <p>Rating: 4.8/5</p>
-      <p>Jobs Available: 700</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-
-    <div class="company">
-
-      <img class="hiring" src="emudra.png" alt="">
-      <p>Rating: 4.2/5</p>
-      <p>Jobs Available: 400</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-  </div>
-
-  <div class="company-container">
-    <div class="company">
-      <img class="hiring" src="tesco.png" alt="">
-      <p>Rating: 4.0/5</p>
-      <p>Jobs Available: 200</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-
-    <div class="company">
-      <img class="hiring" src="keyloop.png" alt="">
-      <p>Rating: 4.6/5</p>
-      <p>Jobs Available: 300</p>
-      <a href="apply.html">Apply now</a>
+    <!-- Featured Companies Actively Hiring -->
+    <h2 align="center">Featured companies actively hiring</h2>
+    <div class="company-container">
+        <!-- Add your existing company container content here -->
+        <div class="company">
+            <img class="hiring" src="reliance.png" alt="">
+            <p>Rating: 4.5/5</p>
+            <p>Jobs Available: 500</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+      
+          <div class="company">
+            <img class="hiring" src="belden2.png" alt="">
+            <p>Rating: 4.8/5</p>
+            <p>Jobs Available: 700</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+      
+          <div class="company">
+      
+            <img class="hiring" src="emudra.png" alt="">
+            <p>Rating: 4.2/5</p>
+            <p>Jobs Available: 400</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+        </div>
+      
+        <div class="company-container">
+          <div class="company">
+            <img class="hiring" src="tesco.png" alt="">
+            <p>Rating: 4.0/5</p>
+            <p>Jobs Available: 200</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+      
+          <div class="company">
+            <img class="hiring" src="keyloop.png" alt="">
+            <p>Rating: 4.6/5</p>
+            <p>Jobs Available: 300</p>
+            <a href="apply.html">Apply now</a>
+          </div>
+      
+          <div class="company">
+            <img class="hiring" src="netapp.avif" alt="">
+            <p>Rating: 3.9/5</p>
+            <p>Jobs Available: 600</p>
+            <a href="apply.html">Apply now</a>
+          </div>
     </div>
 
-    <div class="company">
-      <img class="hiring" src="netapp.avif" alt="">
-      <p>Rating: 3.9/5</p>
-      <p>Jobs Available: 600</p>
-      <a href="apply.html">Apply now</a>
-    </div>
-  </div>
-  <hr>
-  <div>
-    <h2 align="center">Boost Your Carrier With!!</h2>
-    <div class="event-container" style="display: flex;justify-content: space-around; margin: 20px;">
-      <div class="event-card">
-        <img class="hiring" src="codingninjas.png" alt="" style="margin-bottom:30px;margin-top: 5px;">
-        <p>Join our upcoming web development hackathon and showcase your skills...</p>
-        <a href="https://www.codingninjas.com/studio/contests/beginner-contest-53">Visit</a>
-      </div>
+    <hr>
 
-      <div class="event-card">
-        <img class="hiring" src="leetcode.png" alt="" style="margin-bottom: 10px;">
-        <p>Participate in our data science challenge and solve real-world problems...</p>
-        <a href="https://leetcode.com/">Visit</a>
-      </div>
-
-      <div class="event-card">
-        <img class="hiring" src="codechef.png" alt="" style="margin-bottom: 25px;">
-        <p>Explore job opportunities at our career fair. Meet top companies...</p>
-        <a href="https://www.codechef.com/">Visit</a>
-      </div>
-    </div>
-  </div>
-  <!------FOOTER SECTION FOOTER SECTION FOOTER SECTION ------->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h3>About Us:</h3>
-        <p style="color:aliceblue">Connecting talents with opportunities.</p>
-
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="homepage.html">Home</a></li>
-          <li><a href="jobs.html">Search Jobs</a></li>
-          <li><a href="jobs.html">Post a Job</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="terms.html">Terms of Service</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>Email: gabaXXXXX@gmail.com</p>
-        <p>Phone:+91955723XXXX</p>
-      </div>
+    <!-- Boost Your Carrier With!! -->
+    <div>
+        <h2 align="center">Boost Your Carrier With!!</h2>
+        <div class="event-container" style="display: flex; justify-content: space-around; margin: 20px;">
+            <!-- Add your existing event container content here -->
+            <div class="event-card">
+                <img class="hiring" src="codingninjas.png" alt="" style="margin-bottom:30px;margin-top: 5px;">
+                <p>Join our upcoming web development hackathon and showcase your skills...</p>
+                <a href="https://www.codingninjas.com/studio/contests/beginner-contest-53">Visit</a>
+              </div>
+        
+              <div class="event-card">
+                <img class="hiring" src="leetcode.png" alt="" style="margin-bottom: 10px;">
+                <p>Participate in our data science challenge and solve real-world problems...</p>
+                <a href="https://leetcode.com/">Visit</a>
+              </div>
+        
+              <div class="event-card">
+                <img class="hiring" src="codechef.png" alt="" style="margin-bottom: 25px;">
+                <p>Explore job opportunities at our career fair. Meet top companies...</p>
+                <a href="https://www.codechef.com/">Visit</a>
+              </div>
+        </div>
     </div>
 
-    <div class="copyright-bar">
-      <p>&copy; 2024.All rights reserved. | Designed by Catalyst Pvt Ltd.</p>
-    </div>
-  </footer>
-  <script>
-    function toggleNavbar() {
-        const navbar = document.getElementById("myNavbar");
-        navbar.classList.toggle("responsive");
-    }
-</script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>About Us:</h3>
+            <p style="color:aliceblue">Connecting talents with opportunities.</p>
+    
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="jobs.html">Search Jobs</a></li>
+              <li><a href="jobs.html">Post a Job</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: gabaXXXXX@gmail.com</p>
+            <p>Phone:+91955723XXXX</p>
+          </div>
+        </div>
+    
+        <div class="copyright-bar">
+          <p>&copy; 2024.All rights reserved. | Designed by Catalyst Pvt Ltd.</p>
+        </div>
+      </footer>
+
+    <!-- Script for toggling navbar -->
+    <script>
+        function toggleNavbar() {
+            const navbar = document.getElementById("myNavbar");
+            navbar.classList.toggle("responsive");
+        }
+    </script>
 </body>
 
 </html>
