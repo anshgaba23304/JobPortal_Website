@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon2.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            background-image: url("back.webp");
+            background-repeat: no-repeat;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #2d2d2d;
+            padding: 8px 16px;
+            /* Adjust the padding for height reduction */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 12px;
+            
+            text-decoration: none;
+            font-size: 16px;
+            
+        }
+
+        .navbar img {
+            height: 30px;
+            
+            margin-right: 10px;
+            
+        }
+
+        .navbar .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .search input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .navbar .user-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .user-menu a:hover
+    {
+      background-color:white;
+      color: #222;
+    }
+    .navbar a:hover
+    {
+      background-color:#ffd700;
+      color: #222;
+      border-radius: 5px;
+      
+    }
+        .navbar .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a:not(:first-child) {
+                display: none;
+            }
+
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
+
+            .navbar .search,
+            .navbar .user-menu {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar.responsive {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .navbar.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .navbar.responsive .search,
+            .navbar.responsive .user-menu {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        header {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .service {
+            flex: 0 0 30%;
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            border-width: 5px;
+            /* border-color: black; */
+            border-style:ridge;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+        }
+
+        .service h2 {
+            color: #343a40;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 22px;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="#">
+              <img src="2.png" alt="JobPortal Logo">
+            </a>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="jobs.html">Jobs</a></li>
+              <li><a href="#">Companies</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search jobs">
+          </div>
+          <div class="user-menu">
+            <a href="login.html" class="login">Login/Sign-up</a>
+             <a href="#" class="btn-signup">Sign Up</a> 
+          </div>
+        </div>
+      </nav> -->
+      <div class="navbar" id="myNavbar">
+        <a href="homepage.html">
+            <img src="2.png" alt="JobPortal Logo">
+        </a>
+        <a href="homepage.html" class="active">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <!-- <a href="companies.html">Companies</a> -->
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <div class="search">
+            <input type="text" placeholder="Search jobs">
+        </div>
+        <div class="user-menu">
+            <a href="login.html" class="login">Login/Sign-up</a>
+            <!-- <a href="#" class="btn-signup">Sign Up</a> -->
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">&#9776;</a>
+    </div>
+
+    
+    <section>
+        <div class="service">
+            <h2>Resume Display</h2>
+            <p>Increase your Profile Visibility to recruiters up to 3 times. Get a Featured Profile, stand out, and get noticed in recruiter eyes.</p>
+            <p>Subscription starts from <span class="price">Rs.872</span> for 1 Month.</p>
+        </div>
+
+        <div class="service">
+            <h2>Priority Applicant</h2>
+            <p>Be a Priority Applicant & increase your chance of getting a call. Be the first one to apply and catch recruiter attention.</p>
+            <p>Subscription starts from <span class="price">Rs.942</span> for 3 Months.</p>
+        </div>
+
+        <div class="service">
+            <h2>Job Search Booster</h2>
+            <p>Boost your job search with referrals. Take help from over 20,000 seniors in top companies like TCS, HCL, Accenture, etc.</p>
+            <p>Subscription cost is <span class="price">Rs.839</span> only.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3 >About Us:</h3>
+            <p style="color:aliceblue">Connecting talents with opportunities.</p>
+            
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="jobs.html">Search Jobs</a></li>
+              <li><a href="jobs.html">Post a Job</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: gabaXXXXX@gmail.com</p>
+            <p>Phone:+91955723XXXX</p>
+          </div>
+        </div>
+        
+        <div class="copyright-bar">
+          <p>&copy; 2024.All rights reserved. | Designed by Catalyst</p>
+        </div>
+      </footer>
+      <script>
+        function toggleNavbar() {
+            const navbar = document.getElementById("myNavbar");
+            navbar.classList.toggle("responsive");
+        }
+    </script>
+</body>
+
+</html>
