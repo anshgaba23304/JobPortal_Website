@@ -32,13 +32,6 @@
             justify-content: center;
         }
 
-        /* Navbar Styles */
-        .navbar {
-            background-color: #333;
-            color: #fff;
-            padding: 15px 0;
-        }
-
         .container {
             width: 100%;
             background: #fff;
@@ -49,12 +42,13 @@
 
         .container .content {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            align-items: flex-start;
             justify-content: space-between;
         }
 
         .container .content .left-side {
-            width: 25%;
+            width: 15%;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -98,8 +92,8 @@
         }
 
         .container .content .right-side {
-            width: 75%;
-            margin-left: 75px;
+            width: 80%; /* Adjusted width for better balance */
+            margin-left: 0;
         }
 
         .content .right-side .topic-text {
@@ -136,7 +130,8 @@
         }
 
         .right-side .button {
-            display: inline-block;
+            display: flex;
+            justify-content: space-between; /* Adjusted layout for buttons */
             margin-top: 12px;
         }
 
@@ -154,6 +149,18 @@
 
         .button input[type="button"]:hover {
             background: rgb(169, 122, 34);
+        }
+
+        @media screen and (max-width: 768px) {
+            .container .content .left-side {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .container .content .right-side {
+                width: 100%;
+                margin-left: 0;
+            }
         }
     </style>
 </head>
@@ -205,16 +212,13 @@
                     </div>
                     <div class="button">
                         <input type="button" value="Send Now">
-                    </div>
-                    <div class="button" style="float: right;">
-                        <!-- <input type="button" value="Back to Home"> -->
-                        <a href="homepage.html"> <input type="button" value="Back to Home"></a>
+                        <a href="homepage.html"><input type="button" value="Back to Home"></a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>
