@@ -1,0 +1,155 @@
+/* #im {
+    width: 25%;
+}
+
+button {
+    border-radius: 15px;
+    width: 30%;
+    height: 6vh;
+    background-color: #0A66C2;
+    color: white;
+    margin-left:35%;
+}
+
+button:hover {
+    background-color: #1c3855;
+}
+
+.hire {
+    box-shadow: 5px 5px 5px 5px lightgrey;
+    height: auto;
+    width: 90%;
+    border-radius: 5%;
+    margin-left: 5%;
+}
+
+.div1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sub1 {
+    border-style: solid;
+    margin-left: 5px;
+}
+
+.sub2 {
+    border-style: solid;
+}
+@media screen and (min-width: 900px ) and (max-width:1500px)  {
+    p{
+        font-size:3.5vh;
+    }
+    ul 
+    {
+        font-size:3.5vh;
+    }
+    ol 
+    {
+        font-size:3.5vh;
+    }
+    b 
+    {
+        font-size:3.5vh;
+    }
+} */
+#im {
+    width: 30%; /* Adjusted width for responsiveness */
+}
+
+button {
+    border-radius: 15px;
+    width: 60%; /* Adjusted width for responsiveness */
+    height: 6vh;
+    background-color: #0A66C2;
+    color: white;
+    margin-left: 20%; /* Adjusted margin for responsiveness */
+}
+
+button:hover {
+    background-color: #1c3855;
+}
+
+.hire {
+    box-shadow: 5px 5px 5px 5px lightgrey;
+    height: auto;
+    width: 90%;
+    border-radius: 5%;
+    margin: 0 auto; /* Center align the div */
+    margin-bottom: 20px; /* Added margin bottom for spacing */
+}
+
+.div1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Adjusted grid for responsiveness */
+}
+
+.sub1,
+.sub2 {
+    border-style: solid;
+    margin: 5px; /* Added margin for spacing */
+    padding: 10px; /* Added padding for spacing */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* Adjustments for small screens */
+/* Adjustments for small screens */
+@media screen and (max-width: 600px) {
+    #im {
+        width: 30%;
+    }
+
+    button {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .div1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sub1,
+    .sub2 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Adjustments for medium-sized screens */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    button {
+        width: 60%;
+        margin-left: 20%;
+    }
+    .div1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Adjustments for large screens */
+@media screen and (min-width: 1025px) {
+    .div1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    button {
+        width: 30%;
+        margin-left: 35%;
+    }
+}
+.app_ly
+        {
+            background-color: #004F98;
+            width:20%;
+            height: 5vh;
+            border-radius: 9px;
+            color:white;
+           
+        }
+
+        .app_ly:hover
+        {
+            background-color:  #AFDBF5;
+            color:black;
+            cursor: pointer;
+        }
