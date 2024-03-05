@@ -13,142 +13,13 @@
     <link rel="stylesheet" href="style.css">
     <!-- Favicon -->
     <link rel="icon" href="favicon2.png">
-    <style>
-        /* General styles */
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* Navbar styles */
-        .navbar {
-            overflow: hidden;
-            background-color: #2d2d2d;
-            padding: 8px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: #ffffff;
-            text-align: center;
-            padding: 8px 12px;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .navbar img {
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        .navbar .search {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar .search input {
-            padding: 8px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .navbar .user-menu a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
-        .user-menu a:hover {
-            background-color: white;
-            color: #222;
-        }
-
-        .navbar a:hover {
-            background-color: #ffd700;
-            color: #222;
-            border-radius: 5px;
-        }
-
-        .navbar .icon {
-            display: none;
-        }
-
-        /* Media queries for smaller screens */
-        @media screen and (max-width: 600px) {
-            .navbar a:not(:first-child) {
-                display: none;
-            }
-
-            .navbar a.icon {
-                float: right;
-                display: block;
-            }
-
-            .navbar .search,
-            .navbar .user-menu {
-                display: none;
-            }
-
-            .navbar.responsive {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .navbar.responsive a.icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-
-            .navbar.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-
-            .navbar.responsive .search,
-            .navbar.responsive .user-menu {
-                display: flex;
-                flex-direction: column;
-            }
-
-            /* Adjust padding and font size for smaller screens in the navbar */
-            .navbar.responsive {
-                padding: 8px;
-            }
-
-            .navbar.responsive a {
-                font-size: 14px;
-            }
-        }
-
-        /* Column and row styles */
-        .column {
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Company container styles */
-        .company-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-
-        }
-        footer {
-            padding: 20px;
-        }
-    </style>
+ 
 </head>
 
 <body>
     <!-- Navbar -->
     <div class="navbar" id="myNavbar">
-        <a href="homepage.html">
+        <a href="index.html">
             <img src="2.png" alt="JobPortal Logo">
         </a>
         <a href="index.html" class="active">Home</a>
@@ -156,7 +27,16 @@
         <a href="service.html">Services</a>
         <a href="contact.html">Contact</a>
         <div class="search">
-            <input type="text" placeholder="Search jobs">
+            <input type="text" placeholder="Search jobs" list="jobss">
+              <datalist id="jobss">
+                <option value="Amazon"></option>
+                <option value="Cisco"></option>
+                <option value="Google"></option>
+                <option value="Infosys"></option>
+                <option value="Microsoft"></option>
+                <option value="Wipro"></option>
+              </datalist>
+            
         </div>
         <div class="user-menu">
             <a href="login.html" class="login">Login/Sign-up</a>
@@ -179,7 +59,7 @@
             <!-- Add more slides as needed -->
           </div>
   
-    </div><br>
+    </div><br><hr>
     <!-- Feature section -->
     <div class="row">
         <div class="column">
@@ -220,14 +100,14 @@
             <img class="hiring"src="google2.png" alt="">
               <p>Rating: 4.5/5</p>
               <p>Jobs Available: 500</p>
-              <a href="apply.html">Apply now</a>
+              <a href="Google.html">Apply now</a>
           </div>
       
           <div class="company">
             <img class="hiring"src="microsoft-2.webp" alt="">
               <p>Rating: 4.8/5</p>
               <p>Jobs Available: 700</p>
-              <a href="apply.html">Apply now</a>
+              <a href="microsoft.html">Apply now</a>
           </div>
       
           <div class="company">
@@ -235,33 +115,53 @@
             <img class="hiring"src="amazon.png" alt="">
               <p>Rating: 4.2/5</p>
               <p>Jobs Available: 400</p>
-              <a href="apply.html">Apply now</a>
+              <a href="amazon.html">Apply now</a>
           </div>
       </div>
       
       <div class="company-container">
           <div class="company">
-            <img class="hiring"src="Infosys.jpg" alt="">
+            <img class="hiring"src="infosys.jpg" alt="">
               <p>Rating: 4.0/5</p>
               <p>Jobs Available: 200</p>
-              <a href="apply.html">Apply now</a>
+              <a href="infosys.html">Apply now</a>
           </div>
       
           <div class="company">
             <img class="hiring"src="cisco.png" alt="">
               <p>Rating: 4.6/5</p>
               <p>Jobs Available: 300</p>
-              <a href="apply.html">Apply now</a>
+              <a href="cisco.html">Apply now</a>
           </div>
       
           <div class="company">
             <img class="hiring"src="Wipro.jpg" alt="">
               <p>Rating: 3.9/5</p>
               <p>Jobs Available: 600</p>
-              <a href="apply.html">Apply now</a>
+              <a href="wipro.html">Apply now</a>
           </div>
     </div><br><br>
-
+    <hr>
+    <h1 align="center" style="font-family:'Times New Roman', Times, serif;">Testimonials</h1>
+    <div class="testimonial-slider">
+        <div class="testimonial">
+          <p class="quote">"Great platform for finding jobs! I found my dream job within a week of signing up."</p>
+          <p class="author">-Ansh Gaba</p>
+        </div>
+        <div class="testimonial">
+          <p class="quote">"Amazing service! The job search filters helped me narrow down exactly what I was looking for."</p>
+          <p class="author">-Ayush Batra</p>
+        </div>
+        <!-- Add more testimonials as needed -->
+        <div class="testimonial">
+          <p class="quote">"The user-friendly interface made it easy for me to search for relevant positions."</p>
+          <p class="author">-Shraddha Kapoor</p>
+        </div>
+        <div class="testimonial">
+          <p class="quote">"Excellent service, great and easy platform to use.</p>
+          <p class="author">-Reemanshi</p>
+        </div>
+      </div><br><br><br>
     <!-- Footer -->
     <footer>
         <div class="footer-container">
@@ -275,7 +175,6 @@
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="jobs.html">Search Jobs</a></li>
-              <li><a href="jobs.html">Post a Job</a></li>
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
@@ -283,7 +182,7 @@
             <h3>Legal</h3>
             <ul>
               <li><a href="terms.html">Terms of Service</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
             </ul>
           </div>
           
@@ -319,6 +218,57 @@
             navbar.classList.toggle("responsive");
         }
     </script>
+
+    <!-- testimonial script -->
+    <script>
+        let index = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+      
+        function showTestimonial() {
+          testimonials.forEach((testimonial, i) => {
+            if (i === index) {
+              testimonial.style.display = 'block';
+            } else {
+              testimonial.style.display = 'none';
+            }
+          });
+        }
+      
+        function nextTestimonial() {
+          index++;
+          if (index >= testimonials.length) {
+            index = 0;
+          }
+          showTestimonial();
+        }
+      
+        // Optional: Auto slide
+        setInterval(nextTestimonial, 3000);
+      
+        // Initial call
+        showTestimonial();
+      </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.querySelector('.search input');
+      
+      searchInput.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter') {
+              const inputValue = this.value.trim().toLowerCase();
+              const companies = ['amazon', 'cisco', 'microsoft','google','infosys','wipro','reliance','belden','tesco','emudhra','keyloop'];
+              
+              if (companies.includes(inputValue)) {
+                  window.location.href = inputValue +'.html'; // Redirect to apply.html for the matched company
+              } else {
+                  alert('No jobs found for the entered company.');
+              }
+          }
+      });
+  });
+</script>
+
+    
 </body>
 
 </html>
