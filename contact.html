@@ -52,15 +52,15 @@
                     team is committed to providing you with prompt and helpful responses. Thank you for choosing to
                     connect
                     with us-we look forward to hearing from you and assisting in any way we can.</p>
-                <form action="#">
+                <form action="#" id="ContactForm">
                     <div class="input-box">
-                        <input type="text" placeholder="Enter your name">
+                        <input type="text" id="name" placeholder="Enter your name">
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="Enter your email">
+                        <input type="text" id="email" placeholder="Enter your email">
                     </div>
                     <div class="input-box message-box">
-                        <input type="text" placeholder="Enter your message">
+                        <input type="text" id="message" placeholder="Enter your message">
                     </div>
                     <div class="button">
                         <input type="button" value="Send Now" onclick="sendMessage()">
@@ -71,38 +71,39 @@
         </div>
     </div>
     <script>
-        function sendMessage(event) {
+        function sendMessage() {
             // event.preventDefault(); // Prevent default form submission
     
-            console.log("sendMessage function called");
+            
     
             // Get form input values
-            var name = document.querySelector('input-box"]').value;
-            var email = document.querySelector('input-box"]').value;
-            var message = document.querySelector('input[name="message"]').value;
-    
-            console.log("Name:", name);
-            console.log("Email:", email);
-            console.log("Message:", message);
-    
-            // Create an object to hold form data
-            var formData = {
-                name: name,
-                email: email,
-                message: message
+            var name= document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            var existing=localStorage.getItem('contactFormData');
+
+            var formDA= existing ? JSON.parse(existing):[];
+
+            if(!Array.isArray(formDA)){
+                formDA=[];
+            }
+             
+            var contactFormData={
+                "name":name,
+                "email":email,
+                "message":message,
             };
-    
-            // Convert form data to JSON string
-            var formDataJSON = JSON.stringify(formData);
-    
-            // Save form data to local storage
-            localStorage.setItem('formData', formDataJSON);
-    
+            formDA.push(contactFormData);
+            console.log(formDA[1]);
+
+            localStorage.setItem('contactFormData',JSON.stringify(formDA));
+            
             // Display alert
             alert("Message has been sent");
-    
+            console.log(formDA);
             // Redirect to homepage
-            window.location.href = "index.html";
+            // window.location.href = "index.html";
         }
     </script>
     
